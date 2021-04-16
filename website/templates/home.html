@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 align="center">{{ name }}</h1>
+<div align="center">
+	<img src="{{ image }}">
+</div>
+<br />
+<div>
+	<ul class="list-group list-group-flush">
+		{% for i in range(15) %}
+		{% if ingredients[i] != None and ingredients[i] != '' %}
+		<li class="list-group-item">
+			{{ ingredients[i] }} :: {{ measures[i] }}
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</div>
+<hr />
+<div>
+	{{ instructions }}
+</div>
+<br />
+{% endblock %}
